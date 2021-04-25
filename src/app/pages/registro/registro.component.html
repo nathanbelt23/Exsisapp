@@ -1,0 +1,142 @@
+<div class="card animate__animated animate__bounceInUp">
+    <div class="card-body">
+        <h4 class="card-title">Registro de persona</h4>
+        <h6 class="card-subtitle">
+
+        </h6>
+        <form class="form-horizontal p-t-20" [formGroup]="formPersona">
+            <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Nombre*</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-user"></i></div>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputuname3"
+              formControlName="name"
+              placeholder="Nombre"
+              [ngClass]="{ 'is-invalid': getValidControl('name') }"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="exampleInputuname3" class="col-sm-3 control-label"
+          >Apellidos *</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-user"></i></div>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputuname3"
+              formControlName="family_name"
+              placeholder="Apellido"
+              [ngClass]="{ 'is-invalid': getValidControl('family_name') }"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="exampleInputEmail3" class="col-sm-3 control-label"
+          >Email</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-email"></i></div>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail3"
+              formControlName="email"
+              placeholder="Email"
+              [ngClass]="{ 'is-invalid': getValidControl('email') }"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputEmail3" class="col-sm-3 control-label"
+          >Telefono*</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-mobile"></i></div>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail3"
+              formControlName="phone"
+              placeholder="Telefono"
+              maxlength="10"
+              [ngClass]="{ 'is-invalid': getValidControl('phone') }"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="web" class="col-sm-3 control-label"
+          >Programa de Interes</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-world"></i></div>
+            <select
+              formControlName="program"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': getValidControl('program') }"
+            >
+              <option value="0">-Selecciona-</option>
+              >
+
+              <option
+                *ngFor="let profesion of Profesiones"
+                [value]="profesion.id"
+              >
+                {{ profesion.name }}
+              </option>
+              >
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword4" class="col-sm-3 control-label"
+          >Comentario*</label
+        >
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-comment"></i></div>
+
+            <textarea
+              class="form-control"
+              name=""
+              id=""
+              rows="3"
+              formControlName="comment"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row float-right ">
+        <div class="col-sm-12">
+          <button
+            type="submit"
+            class="btn btn-success waves-effect waves-light float-right "
+            (click)="guardar()"
+            [disabled]="formPersona.invalid"
+          >
+            Guardar  <i class="fa fa-save text-white"></i>
+          </button>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>

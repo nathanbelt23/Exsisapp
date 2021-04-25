@@ -1,0 +1,38 @@
+<div class="card border-primary animate__animated animate__bounceInUp">
+
+
+    <div class="card-body">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="w-25">Titulares</th>
+                    <th class="w-70">Detalle</th>
+                    <th class="w-5">Ver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let noticia of Noticias">
+                    <th scope="row">
+                        {{noticia.title}}
+
+                    </th>
+                    <td>
+                        {{noticia.body|slice:0:70}}..
+                    </td>
+                    <td>
+
+
+                        <a class="badge badge-primary" [routerLink]="[ '/home/noticia', noticia.id ]">Enlace</a>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

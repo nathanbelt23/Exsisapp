@@ -1,0 +1,45 @@
+<div class="card-body p-t-0" *ngIf="Noticias.length>0">
+    <div class="card b-all shadow-none">
+        <div class="card-body">
+            <h3 class="card-title m-b-0">{{Noticias[0].title}}</h3>
+        </div>
+        <div>
+            <hr class="m-t-0">
+        </div>
+        <div class="card-body">
+            <div class="d-flex m-b-40">
+                <div>
+
+                </div>
+                <div class="p-l-10">
+                    <h4 class="m-b-0"></h4>
+                    <small class="text-muted">Desarollador : Yonathan Beltran </small>
+                </div>
+            </div>
+
+            <p>
+                {{Noticias[0].body}}
+
+            </p>
+            <hr class="m-2">
+            <button type="button" routerLink="/home/noticias" class="btn btn-secondary  float-right">volver</button>
+            <br>
+        </div>
+        <div>
+
+
+        </div>
+
+    </div>
+</div>
+<div class="card-body p-t-0" *ngIf="Noticias.length==0">
+    <div class="card b-all shadow-none">
+        <div class="card-body">
+            <div class="alert alert-danger" role="alert">
+                <strong>   Ups... no  tengo la noticia </strong>
+
+            </div>
+            <hr class="m-2">
+            <button type="button" routerLink="/home/noticias" class="btn btn-secondary  float-right">volver</button>
+        </div>
+    </div>
